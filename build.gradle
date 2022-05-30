@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.json:json:20220320'
+    implementation (group: 'es.usc.citius.hipster', name:'hipster-all', version: '1.0.1'){
+        exclude group: 'org.json'
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
